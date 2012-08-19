@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+    <head>
+        <script type="text/javascript" src="../script/knockout-2.1.0.js"></script>
+      
+    </head>
+    <body>
+    <h2>Rezervasyonlar</h2>
+
+<table>
+    <thead><tr>
+        <th>Yolcu Adı</th><th>Yemek</th><th>Fiyat</th><th></th>
+    </tr></thead>
+    <!-- Todo: Generate table body -->
+   <tbody data-bind="foreach: koltuklar">
+    <tr>
+       <td><input data-bind="value: isim" /></td>
+        <td><select data-bind="options: $root.yemekListesi, value: yemek, optionsText: 'yemekAdi'"></select></td>
+        <td data-bind="text: yemek().fiyat"></td>
+    </tr>    
+</tbody></table>
+        <button data-bind="click: koltukEkle">Rezervasyon Ekle</button>
+          <script type="text/javascript" src="../script/viewmodels/tableViewModel.js"></script>
+    </body>
+</html>
